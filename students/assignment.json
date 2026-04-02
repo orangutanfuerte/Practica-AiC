@@ -1,0 +1,9 @@
+{
+    "id": "Assignment",
+    "name": "Algorithms & Complexity Assignment (Part 1)",
+    "problems": [
+        "sorting",
+        "gen-mut"
+    ],
+    "max_student_group_size": 2
+}

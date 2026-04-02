@@ -1,0 +1,17 @@
+{
+  "id": "gen-mut",
+  "name": "Genetic Mutation Similarity",
+  "limits": {
+    "cpu_seconds": 30,
+    "memory_mb": 1024,
+    "cpu_threshold_pctg": 10
+  },
+  "public_instance_sets": [
+    "easy",
+    "hard"
+  ],
+  "solutions": [
+    "solutions/alg1.py",
+    "solutions/alg2.py"
+  ]
+}

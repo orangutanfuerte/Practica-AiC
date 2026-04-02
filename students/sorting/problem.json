@@ -1,0 +1,17 @@
+{
+  "id": "sorting",
+  "name": "Sorting",
+  "limits": {
+    "cpu_seconds": 30,
+    "memory_mb": 1024,
+    "cpu_threshold_pctg": 10
+  },
+  "public_instance_sets": [
+    "easy",
+    "hard"
+  ],
+  "solutions": [
+    "solutions/alg2.py",
+    "solutions/alg3.py"
+  ]
+}
