@@ -1,0 +1,248 @@
+{
+  "solutions": {
+    "solutions/alg2.py": {
+      "inst-s10-partial.txt.bz2": {
+        "time": 0.16311,
+        "memory": 31212,
+        "status": "OK"
+      },
+      "inst-s10-random.txt.bz2": {
+        "time": 0.16452699999999998,
+        "memory": 31396,
+        "status": "OK"
+      },
+      "inst-s10-reverse.txt.bz2": {
+        "time": 0.133551,
+        "memory": 31220,
+        "status": "OK"
+      },
+      "inst-s10-sorted.txt.bz2": {
+        "time": 0.134714,
+        "memory": 31072,
+        "status": "OK"
+      },
+      "inst-s100-partial.txt.bz2": {
+        "time": 0.139321,
+        "memory": 31112,
+        "status": "OK"
+      },
+      "inst-s100-random.txt.bz2": {
+        "time": 0.130699,
+        "memory": 31300,
+        "status": "OK"
+      },
+      "inst-s100-reverse.txt.bz2": {
+        "time": 0.13906000000000002,
+        "memory": 31288,
+        "status": "OK"
+      },
+      "inst-s100-sorted.txt.bz2": {
+        "time": 0.130201,
+        "memory": 31264,
+        "status": "OK"
+      },
+      "inst1-s1000000-partial.txt.bz2": {
+        "time": 4.169184,
+        "memory": 82124,
+        "status": "OK"
+      },
+      "inst1-s1000000-random.txt.bz2": {
+        "time": 4.8962140000000005,
+        "memory": 81884,
+        "status": "OK"
+      },
+      "inst1-s1000000-reverse.txt.bz2": {
+        "time": 2.527732,
+        "memory": 79948,
+        "status": "OK"
+      },
+      "inst1-s1000000-sorted.txt.bz2": {
+        "time": 2.5582599999999998,
+        "memory": 80004,
+        "status": "OK"
+      },
+      "inst1-s2500000-partial.txt.bz2": {
+        "time": 12.282551,
+        "memory": 170092,
+        "status": "OK"
+      },
+      "inst1-s2500000-random.txt.bz2": {
+        "time": 15.649396,
+        "memory": 170144,
+        "status": "OK"
+      },
+      "inst1-s2500000-reverse.txt.bz2": {
+        "time": 7.085882000000001,
+        "memory": 165092,
+        "status": "OK"
+      },
+      "inst1-s2500000-sorted.txt.bz2": {
+        "time": 6.777015,
+        "memory": 165288,
+        "status": "OK"
+      },
+      "inst2-s1000000-partial.txt.bz2": {
+        "time": 4.38764,
+        "memory": 120716,
+        "status": "OK"
+      },
+      "inst2-s1000000-random.txt.bz2": {
+        "time": 5.283719,
+        "memory": 121100,
+        "status": "OK"
+      },
+      "inst2-s1000000-reverse.txt.bz2": {
+        "time": 2.6083670000000003,
+        "memory": 121100,
+        "status": "OK"
+      },
+      "inst2-s1000000-sorted.txt.bz2": {
+        "time": 2.654546,
+        "memory": 121100,
+        "status": "OK"
+      },
+      "inst2-s2500000-partial.txt.bz2": {
+        "time": 12.888207999999999,
+        "memory": 170444,
+        "status": "OK"
+      },
+      "inst2-s2500000-random.txt.bz2": {
+        "time": 14.973322999999999,
+        "memory": 170076,
+        "status": "OK"
+      },
+      "inst2-s2500000-reverse.txt.bz2": {
+        "time": 7.081638,
+        "memory": 165360,
+        "status": "OK"
+      },
+      "inst2-s2500000-sorted.txt.bz2": {
+        "time": 7.441787,
+        "memory": 165136,
+        "status": "OK"
+      }
+    },
+    "solutions/alg3.py": {
+      "inst-s10-partial.txt.bz2": {
+        "time": 0.161223,
+        "memory": 31344,
+        "status": "OK"
+      },
+      "inst-s10-random.txt.bz2": {
+        "time": 0.139915,
+        "memory": 31344,
+        "status": "OK"
+      },
+      "inst-s10-reverse.txt.bz2": {
+        "time": 0.16425,
+        "memory": 31208,
+        "status": "OK"
+      },
+      "inst-s10-sorted.txt.bz2": {
+        "time": 0.137867,
+        "memory": 31148,
+        "status": "OK"
+      },
+      "inst-s100-partial.txt.bz2": {
+        "time": 0.12916,
+        "memory": 31208,
+        "status": "OK"
+      },
+      "inst-s100-random.txt.bz2": {
+        "time": 0.130742,
+        "memory": 31380,
+        "status": "OK"
+      },
+      "inst-s100-reverse.txt.bz2": {
+        "time": 0.130239,
+        "memory": 31404,
+        "status": "OK"
+      },
+      "inst-s100-sorted.txt.bz2": {
+        "time": 0.13055,
+        "memory": 31288,
+        "status": "OK"
+      },
+      "inst1-s1000000-partial.txt.bz2": {
+        "time": 3.8427759999999997,
+        "memory": 82036,
+        "status": "OK"
+      },
+      "inst1-s1000000-random.txt.bz2": {
+        "time": 4.658183,
+        "memory": 82212,
+        "status": "OK"
+      },
+      "inst1-s1000000-reverse.txt.bz2": {
+        "time": 2.0960069999999997,
+        "memory": 80152,
+        "status": "OK"
+      },
+      "inst1-s1000000-sorted.txt.bz2": {
+        "time": 2.029642,
+        "memory": 80184,
+        "status": "OK"
+      },
+      "inst1-s2500000-partial.txt.bz2": {
+        "time": 11.277946,
+        "memory": 169944,
+        "status": "OK"
+      },
+      "inst1-s2500000-random.txt.bz2": {
+        "time": 12.776083999999999,
+        "memory": 170128,
+        "status": "OK"
+      },
+      "inst1-s2500000-reverse.txt.bz2": {
+        "time": 5.51031,
+        "memory": 165384,
+        "status": "OK"
+      },
+      "inst1-s2500000-sorted.txt.bz2": {
+        "time": 5.184818,
+        "memory": 165784,
+        "status": "OK"
+      },
+      "inst2-s1000000-partial.txt.bz2": {
+        "time": 4.163784,
+        "memory": 121100,
+        "status": "OK"
+      },
+      "inst2-s1000000-random.txt.bz2": {
+        "time": 4.6263380000000005,
+        "memory": 121100,
+        "status": "OK"
+      },
+      "inst2-s1000000-reverse.txt.bz2": {
+        "time": 2.1584719999999997,
+        "memory": 121100,
+        "status": "OK"
+      },
+      "inst2-s1000000-sorted.txt.bz2": {
+        "time": 2.063833,
+        "memory": 121100,
+        "status": "OK"
+      },
+      "inst2-s2500000-partial.txt.bz2": {
+        "time": 11.549465999999999,
+        "memory": 170592,
+        "status": "OK"
+      },
+      "inst2-s2500000-random.txt.bz2": {
+        "time": 11.568904,
+        "memory": 169896,
+        "status": "OK"
+      },
+      "inst2-s2500000-reverse.txt.bz2": {
+        "time": 6.039992,
+        "memory": 165092,
+        "status": "OK"
+      },
+      "inst2-s2500000-sorted.txt.bz2": {
+        "time": 5.428813,
+        "memory": 165404,
+        "status": "OK"
+      }
+    }
+  }
+}
