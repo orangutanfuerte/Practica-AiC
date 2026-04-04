@@ -46,21 +46,41 @@ def mergesort(A, start, end):
 
 def choose_pivot(A, low, high):
     mid = (low + high) // 2
-    trio = [(A[low], low), (A[mid], mid), (A[high], high)]
-    # Ordena per valor i agafa el del mig
-    trio.sort(key=lambda x: x[0])
-    return trio[1][1]  # retorna l'índex del pivot
 
+    if A[low] > A[mid]:
+        A[low], A[mid] = A[mid], A[low]
+
+    if A[mid] > A[high]:
+        A[mid], A[high] = A[high], A[mid]
+
+    if A[low] > A[mid]:
+        A[low], A[mid] = A[mid], A[low]
+
+    return mid
+
+INSERTION_THRESHOLD = 32
 
 def quicksort(A, low, high):
-    if low < high:
+
+    while low < high:
+
+        # arrays petits → insertion sort
+        if high - low < INSERTION_THRESHOLD:
+            insertion_sort(A, low, high)
+            return
+
         pivot_index = choose_pivot(A, low, high)
-        # Mou el pivot a l'última posició abans de particionar
         A[pivot_index], A[high] = A[high], A[pivot_index]
 
         p = partition(A, low, high)
-        quicksort(A, low, p-1)
-        quicksort(A, p+1, high)
+
+        # recursió només al costat més petit
+        if p - low < high - p:
+            quicksort(A, low, p - 1)
+            low = p + 1
+        else:
+            quicksort(A, p + 1, high)
+            high = p - 1
 
 
 def partition(A, low, high):
@@ -149,6 +169,15 @@ def insertionsort_reversed(A):
 
         A[j-1] = key
 
+def insertion_sort(A, low, high):
+    for i in range(low + 1, high + 1):
+        key = A[i]
+        j = i - 1
+        while j >= low and A[j] > key:
+            A[j + 1] = A[j]
+            j -= 1
+        A[j + 1] = key
+
 ###
 ### PORTFOLIO
 ###
@@ -174,24 +203,6 @@ analysisLength = 1000
 checkStep = 400
 
 def my_sort(arr):
-    
-    # Pas 1, si es prou gran, dividir en dos o quatre i fer merge sort perquè ja estaran ordenats
-    if len(arr) > sliceLength:
-        blocks = []
-
-        # dividir y ordenar bloques
-        for i in range(0, len(arr), sliceLength):
-            block = arr[i:i+sliceLength]
-            block = my_sort(block)
-            blocks.append(block)
-
-        # merge progresivo
-        result = blocks[0]
-
-        for i in range(1, len(blocks)):
-            result = mergeTwoArrays(result, blocks[i])
-        
-        return result
 
     # Pas 2, analitzem a grans trets com és l'array
     # Cada 5? Cada 4? No sé, depèn de la mida del array?
@@ -204,7 +215,7 @@ def my_sort(arr):
                 sortedScore += 1
             else:
                 sortedScore -= 1
-        sortedScore /= len(arr)//checkStep
+        sortedScore /= (len(arr)//checkStep-1)
         
         if sortedScore >= 0.6: # un valor bastant alt, ja que l'InsertionSort pot ser molt ineficient
             insertionsort(arr)
@@ -223,7 +234,7 @@ def my_sort(arr):
         # Algun altre algoritme de sort? Em penso que en princpi no
 
     
-    quicksort(arr, 0, len(arr)-1)
+    #quicksort(arr, 0, len(arr)-1)
     # 
 
     # Altres:
@@ -232,7 +243,7 @@ def my_sort(arr):
         # Optimitzar al màxim els algoritmes (comprovacions abans de cridar)
             # Es pot???
 
-    #mergesort(arr, 0, len(arr)-1)
+    quicksort_iterative(arr, 0, len(arr)-1)
     # CAL?
     return arr
 
