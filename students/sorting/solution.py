@@ -9,37 +9,71 @@ import math
 ### MERGESORT
 ###
 
-def merge(A, m):
-    n = len(A)
-    B = [0] * n
-    
-    i = 0
-    j = m+1
-    # recorrem l'array
-    for k in range(n):
-        if j >= n: # si j està fora de la mida de l'array
-            B[k] = A[i]
-            i += 1
-        elif i > m:
-            B[k] = A[j]
-            j += 1
-        elif A[i] < A[j]:
-            B[k] = A[i]
+INSERTION_THRESHOLD = 32
+
+
+def insertion_sort(A, left, right):
+    for i in range(left + 1, right + 1):
+        key = A[i]
+        j = i - 1
+
+        while j >= left and A[j] > key:
+            A[j + 1] = A[j]
+            j -= 1
+
+        A[j + 1] = key
+
+
+def merge(A, temp, left, mid, right):
+
+    i = left
+    j = mid + 1
+    k = left
+
+    while i <= mid and j <= right:
+        if A[i] <= A[j]:
+            temp[k] = A[i]
             i += 1
         else:
-            B[k] = A[j]
+            temp[k] = A[j]
             j += 1
-    return B
+        k += 1
+
+    while i <= mid:
+        temp[k] = A[i]
+        i += 1
+        k += 1
+
+    while j <= right:
+        temp[k] = A[j]
+        j += 1
+        k += 1
+
+    for i in range(left, right + 1):
+        A[i] = temp[i]
 
 
-def mergesort(A, start, end):
-    if start < end: # si és només 1, ho deixem igual
-        m = math.floor((start+end)/2)
-        if end-start > 1: # si és només 2, no cal
-            mergesort(A, start, m)
-            mergesort(A, m+1, end)
-        A[start:end+1] = merge(A[start:end+1], m-start)
+def mergesort(A, temp, left, right):
 
+    if right - left < INSERTION_THRESHOLD:
+        insertion_sort(A, left, right)
+        return
+
+    mid = (left + right) // 2
+
+    mergesort(A, temp, left, mid)
+    mergesort(A, temp, mid + 1, right)
+
+    # si ja està ordenat, evitem merge
+    if A[mid] <= A[mid + 1]:
+        return
+
+    merge(A, temp, left, mid, right)
+
+
+def merge_sort(A):
+    temp = [0] * len(A)
+    mergesort(A, temp, 0, len(A) - 1)
 
 ###
 ### INSERTIONSORT
@@ -101,7 +135,7 @@ def my_sort(arr):
             insertionsort(arr)
             return arr
 
-    mergesort(arr, 0, len(arr)-1)
+    merge_sort(arr)
     return arr
 
 
