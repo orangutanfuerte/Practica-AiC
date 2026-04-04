@@ -1,0 +1,88 @@
+{
+  "solutions": {
+    "solutions/alg1.py": {
+      "inst-s100000-cluster.txt.bz2": {
+        "time": 101.106552,
+        "memory": 53756,
+        "status": "TLE"
+      },
+      "inst-s100000.txt.bz2": {
+        "time": 101.11387400000001,
+        "memory": 53364,
+        "status": "TLE"
+      },
+      "inst-s50000-cluster.txt.bz2": {
+        "time": 101.1381,
+        "memory": 36884,
+        "status": "TLE"
+      },
+      "inst-s50000.txt.bz2": {
+        "time": 101.09271199999999,
+        "memory": 37140,
+        "status": "TLE"
+      },
+      "inst-s70000-cluster.txt.bz2": {
+        "time": 100.91802,
+        "memory": 43828,
+        "status": "TLE"
+      },
+      "inst-s70000.txt.bz2": {
+        "time": 100.90433399999999,
+        "memory": 43408,
+        "status": "TLE"
+      },
+      "inst-s90000-cluster.txt.bz2": {
+        "time": 100.879286,
+        "memory": 50428,
+        "status": "TLE"
+      },
+      "inst-s90000.txt.bz2": {
+        "time": 100.911102,
+        "memory": 50196,
+        "status": "TLE"
+      }
+    },
+    "solutions/alg2.py": {
+      "inst-s100000-cluster.txt.bz2": {
+        "time": 1.969659,
+        "memory": 53704,
+        "status": "OK"
+      },
+      "inst-s100000.txt.bz2": {
+        "time": 2.225643,
+        "memory": 53308,
+        "status": "OK"
+      },
+      "inst-s50000-cluster.txt.bz2": {
+        "time": 0.9551529999999999,
+        "memory": 37168,
+        "status": "OK"
+      },
+      "inst-s50000.txt.bz2": {
+        "time": 1.03186,
+        "memory": 36916,
+        "status": "OK"
+      },
+      "inst-s70000-cluster.txt.bz2": {
+        "time": 1.372414,
+        "memory": 43564,
+        "status": "OK"
+      },
+      "inst-s70000.txt.bz2": {
+        "time": 1.577733,
+        "memory": 43772,
+        "status": "OK"
+      },
+      "inst-s90000-cluster.txt.bz2": {
+        "time": 1.519525,
+        "memory": 50088,
+        "status": "OK"
+      },
+      "inst-s90000.txt.bz2": {
+        "time": 1.577275,
+        "memory": 50316,
+        "status": "OK"
+      }
+    }
+  }
+}

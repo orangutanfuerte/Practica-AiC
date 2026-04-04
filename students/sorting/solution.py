@@ -76,6 +76,52 @@ def partition(A, low, high):
     return i + 1
 
 
+INSERTION_THRESHOLD = 24
+
+def quicksort_iterative(arr, low, high):
+    stack = [(low, high)]
+    
+    while stack:
+        low, high = stack.pop()
+        
+        if high - low < INSERTION_THRESHOLD:
+            for i in range(low + 1, high + 1):
+                key = arr[i]
+                j = i - 1
+                while j >= low and arr[j] > key:
+                    arr[j+1] = arr[j]
+                    j -= 1
+                arr[j+1] = key
+            continue
+        
+        # choose_pivot inlinat
+        mid = (low + high) // 2
+        a, b, c = arr[low], arr[mid], arr[high]
+        if a <= b <= c or c <= b <= a:
+            pivot_idx = mid
+        elif b <= a <= c or c <= a <= b:
+            pivot_idx = low
+        else:
+            pivot_idx = high
+        
+        # partition inlinat
+        arr[pivot_idx], arr[high] = arr[high], arr[pivot_idx]
+        pivot = arr[high]
+        i = low - 1
+        for j in range(low, high):
+            if arr[j] <= pivot:
+                i += 1
+                arr[i], arr[j] = arr[j], arr[i]
+        arr[i+1], arr[high] = arr[high], arr[i+1]
+        p = i + 1
+        
+        if p - low < high - p:
+            stack.append((p + 1, high))
+            stack.append((low, p - 1))
+        else:
+            stack.append((low, p - 1))
+            stack.append((p + 1, high))
+
 ###
 ### INSERTIONSORT
 ###
@@ -107,41 +153,84 @@ def insertionsort_reversed(A):
 ### PORTFOLIO
 ###
 
+def mergeTwoArrays(A, B):
+    i = j = 0
+    result = []
+
+    while i < len(A) and j < len(B):
+        if A[i] <= B[j]:
+            result.append(A[i])
+            i += 1
+        else:
+            result.append(B[j])
+            j += 1
+
+    result.extend(A[i:])
+    result.extend(B[j:])
+    return result
+
+sliceLength = 5000000
+analysisLength = 1000
+checkStep = 400
+
 def my_sort(arr):
-    # Pas 1, si es prou gran, dividir en dos o quatre
+    
+    # Pas 1, si es prou gran, dividir en dos o quatre i fer merge sort perquè ja estaran ordenats
+    if len(arr) > sliceLength:
+        blocks = []
+
+        # dividir y ordenar bloques
+        for i in range(0, len(arr), sliceLength):
+            block = arr[i:i+sliceLength]
+            block = my_sort(block)
+            blocks.append(block)
+
+        # merge progresivo
+        result = blocks[0]
+
+        for i in range(1, len(blocks)):
+            result = mergeTwoArrays(result, blocks[i])
+        
+        return result
 
     # Pas 2, analitzem a grans trets com és l'array
     # Cada 5? Cada 4? No sé, depèn de la mida del array?
-    if len(arr) > 1000:
+    if len(arr) > analysisLength:
         sortedScore = 0
-        for i in range (1, len(arr)//5):
+        for i in range (1, len(arr)//checkStep):
             # podem fer operador ternari
             # podem fer QUANT canvia un nombre
-            if arr[i*5] >= arr[(i-1)*5]:
+            if arr[i*checkStep] >= arr[(i-1)*checkStep]:
                 sortedScore += 1
             else:
                 sortedScore -= 1
-        sortedScore /= len(arr)//5
+        sortedScore /= len(arr)//checkStep
         
-        if sortedScore >= 0.8: # un valor bastant alt, ja que l'InsertionSort pot ser molt ineficient
-            return insertionsort(arr)
-        elif sortedScore <= -0.8:
-            return insertionsort_reversed(arr)
+        if sortedScore >= 0.6: # un valor bastant alt, ja que l'InsertionSort pot ser molt ineficient
+            insertionsort(arr)
+            return arr
+        elif sortedScore <= -0.6:
+            arr.reverse()
+            insertionsort(arr)
+            #insertionsort_reversed(arr)
+            return arr
 
                 # Quicksort amb el pivot així més mitjà que troebm
 
         # Mergesort? CAL? Val la pena en algun cas? Potser si té menys de X mida
             # Segur que ha posat algun que té el pivot completament sense sentit
+           #  Pitjor cas O(n²) — si els tests tenen arrays quasi-ordenats o amb molts duplicats, el quicksort es dispara tot i el pivot medià de tres. El mergesort sempre garanteix O(n log n).
         # Algun altre algoritme de sort? Em penso que en princpi no
 
     
-    # quicksort(arr, 0, len(arr)-1)
+    quicksort(arr, 0, len(arr)-1)
     # 
 
     # Altres:
         # En iteratius gasten més espai però triguen menys en CPU (diria!) o sigui que ens interessa
+            # Val la pena???? Preguntali al compa
         # Optimitzar al màxim els algoritmes (comprovacions abans de cridar)
-        # Partir l'algoritme en trossos perquè cadascun trobi el més adequat?
+            # Es pot???
 
     #mergesort(arr, 0, len(arr)-1)
     # CAL?

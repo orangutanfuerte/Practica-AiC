@@ -10,7 +10,7 @@ def dist(p1, p2):
 
 
 def my_gen_mut_algorithm(points):
-    raise NotImplementedError("Implement Me!")
+    return "HOLA"
 
 
 def main():
