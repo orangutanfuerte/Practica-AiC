@@ -58,75 +58,24 @@ def insertionsort(A):
 
 
 ###
-### QUICKSORT
-###
-INSERTION_THRESHOLD = 32
-
-def quicksort(A, low, high):
-
-    while low < high:
-
-        # arrays petits → insertion sort
-        if high - low < INSERTION_THRESHOLD:
-            insertion_sort(A, low, high)
-            return
-
-        pivot_index = choose_pivot(A, low, high)
-        A[pivot_index], A[high] = A[high], A[pivot_index]
-
-        p = partition(A, low, high)
-
-        # recursió només al costat més petit
-        if p - low < high - p:
-            quicksort(A, low, p - 1)
-            low = p + 1
-        else:
-            quicksort(A, p + 1, high)
-            high = p - 1
-
-
-def partition(A, low, high):
-    pivot = A[high]
-    i = low - 1
-
-    for j in range(low, high):
-        if A[j] <= pivot:
-            i += 1
-            A[i], A[j] = A[j], A[i]
-
-    A[i+1], A[high] = A[high], A[i+1]
-    return i + 1
-
-
-def choose_pivot(A, low, high):
-    mid = (low + high) // 2
-
-    if A[low] > A[mid]:
-        A[low], A[mid] = A[mid], A[low]
-
-    if A[mid] > A[high]:
-        A[mid], A[high] = A[high], A[mid]
-
-    if A[low] > A[mid]:
-        A[low], A[mid] = A[mid], A[low]
-
-    return mid
-
-
-def insertion_sort(A, low, high):
-    for i in range(low + 1, high + 1):
-        key = A[i]
-        j = i - 1
-        while j >= low and A[j] > key:
-            A[j + 1] = A[j]
-            j -= 1
-        A[j + 1] = key
-
-
-###
 ### PORTFOLIO
 ###
 
+def mergeTwoArrays(A, B):
+    i = j = 0
+    result = []
+
+    while i < len(A) and j < len(B):
+        if A[i] <= B[j]:
+            result.append(A[i])
+            i += 1
+        else:
+            result.append(B[j])
+            j += 1
+
+    result.extend(A[i:])
+    result.extend(B[j:])
+    return result
 
 ANALYSIS_LENGTH = 1000
 CHCECK_STEP = 400
