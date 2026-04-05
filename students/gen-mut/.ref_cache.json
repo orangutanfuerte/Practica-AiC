@@ -1,0 +1,88 @@
+{
+  "solutions": {
+    "solutions/alg1.py": {
+      "inst-s100000-cluster.txt.bz2": {
+        "time": 105.342032,
+        "memory": 53756,
+        "status": "TLE"
+      },
+      "inst-s100000.txt.bz2": {
+        "time": 105.201836,
+        "memory": 53572,
+        "status": "TLE"
+      },
+      "inst-s50000-cluster.txt.bz2": {
+        "time": 104.831687,
+        "memory": 36888,
+        "status": "TLE"
+      },
+      "inst-s50000.txt.bz2": {
+        "time": 105.285025,
+        "memory": 37140,
+        "status": "TLE"
+      },
+      "inst-s70000-cluster.txt.bz2": {
+        "time": 105.216826,
+        "memory": 43684,
+        "status": "TLE"
+      },
+      "inst-s70000.txt.bz2": {
+        "time": 105.643688,
+        "memory": 43552,
+        "status": "TLE"
+      },
+      "inst-s90000-cluster.txt.bz2": {
+        "time": 105.59321,
+        "memory": 50120,
+        "status": "TLE"
+      },
+      "inst-s90000.txt.bz2": {
+        "time": 105.451205,
+        "memory": 49944,
+        "status": "TLE"
+      }
+    },
+    "solutions/alg2.py": {
+      "inst-s100000-cluster.txt.bz2": {
+        "time": 2.4588150000000004,
+        "memory": 53300,
+        "status": "OK"
+      },
+      "inst-s100000.txt.bz2": {
+        "time": 2.8422330000000002,
+        "memory": 53244,
+        "status": "OK"
+      },
+      "inst-s50000-cluster.txt.bz2": {
+        "time": 1.456902,
+        "memory": 36948,
+        "status": "OK"
+      },
+      "inst-s50000.txt.bz2": {
+        "time": 1.53643,
+        "memory": 36932,
+        "status": "OK"
+      },
+      "inst-s70000-cluster.txt.bz2": {
+        "time": 1.93468,
+        "memory": 43388,
+        "status": "OK"
+      },
+      "inst-s70000.txt.bz2": {
+        "time": 1.440735,
+        "memory": 43416,
+        "status": "OK"
+      },
+      "inst-s90000-cluster.txt.bz2": {
+        "time": 2.5070189999999997,
+        "memory": 50140,
+        "status": "OK"
+      },
+      "inst-s90000.txt.bz2": {
+        "time": 2.70692,
+        "memory": 49952,
+        "status": "OK"
+      }
+    }
+  }
+}

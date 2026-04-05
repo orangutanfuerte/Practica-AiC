@@ -1,0 +1,34 @@
+analisi resultats gen mut
+
+Primera versio
+
+
+    ordered_points_by_x = sorted(points, key=lambda p: p[0])
+    point0_index = 0
+    point1_index = 0
+    min_dist=math.inf # es podria fer diferent i millor tipo agafant la primera
+    for i in range (0, len(ordered_points_by_x)-1):
+        for j in range (i+1, len(ordered_points_by_x)):
+            # Només cal comparar-lo amb els punts que tant en la x com la y estan dins la dist
+            if abs(ordered_points_by_x[i][0] - ordered_points_by_x[j][0]) > min_dist: # cal l'abs?
+                break
+            new_dist = dist(ordered_points_by_x[i], ordered_points_by_x[j])
+            if  new_dist < min_dist:
+                min_dist=new_dist
+                point0_index = i
+                point1_index = j
+    
+    return min_dist, [ordered_points_by_x[point0_index], ordered_points_by_x[point1_index]]
+    
+    
+
+SUMMARY
+============================================================
+Solution                  Avg Time   Min Time   Max Time   Success   
+------------------------------------------------------------
+solution.py               0.586     s 0.434     s 0.890     s 100.0     %
+alg2.bin                  1.212     s 0.780     s 1.720     s 100.0     %
+============================================================
+
+
+Segona versió
